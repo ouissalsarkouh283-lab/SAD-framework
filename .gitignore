@@ -1,0 +1,22 @@
+# Base de données SurrealDB
+sad_db.db/
+
+# Outputs générés automatiquement
+outputs/
+
+data/
+
+# MLflow (dossier mlruns généré automatiquement)
+mlruns/
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+desktop.ini
+
+# Fichiers de travail
+mon-stage.code-workspace
+test_models.py

@@ -1,0 +1,40 @@
+{
+  "pipeline": {
+    "required": [
+      {"name": "date_principale",      "type": "date"},
+      {"name": "valeur_principale",    "type": "numeric"},
+      {"name": "quantite_principale",  "type": "numeric"},
+      {"name": "categorie_principale", "type": "categorical"}
+    ],
+    "recommended": [
+      {"name": "taux",               "type": "numeric"},
+      {"name": "identifiant_entite", "type": "categorical"},
+      {"name": "libelle",            "type": "categorical"},
+      {"name": "localisation",       "type": "categorical"}
+    ],
+    "optional": [
+      {"name": "identifiant_unique", "type": "string"},
+      {"name": "code",               "type": "string"}
+    ]
+  },
+  "models": {
+    "random_forest": {
+      "requires": ["valeur_principale", "quantite_principale"],
+      "target":   "cible_business",
+      "features": ["quantite_principale","categorie_principale", "date_principale_mois"]
+    },
+    "kmeans": {
+      "requires": ["valeur_principale", "quantite_principale"],
+      "features": ["valeur_principale", "quantite_principale"],
+      "n_clusters": "auto"
+    },
+    "zscore": {
+      "requires":  ["valeur_principale"],
+      "features":  ["valeur_principale"],
+      "threshold": 3
+    },
+    "optimization": {
+      "requires": ["valeur_principale", "quantite_principale"]
+    }
+  }
+}

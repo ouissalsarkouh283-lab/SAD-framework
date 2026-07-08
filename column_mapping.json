@@ -1,0 +1,17 @@
+{
+  "columns": {
+    "datebl":   "date_principale",
+    "puart":    "valeur_principale",
+    "qte":      "quantite_principale",
+    "famille":  "categorie_principale",
+    "remise":   "taux",
+    "rsocf":    "identifiant_entite",
+    "libart":   "libelle",
+    "codedep":  "localisation"
+  },
+  "target_definition": {
+    "source_column": "taux",
+    "rule": "greater_than",
+    "value": 0
+  }
+}
