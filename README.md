@@ -277,6 +277,9 @@ app.py           — S'adapte au dataset selectionne
 ## Auteur
 
 [Ouissal SARKOUH]
-Stage de fin d'etudes — [LeaderTec Engineering]
+
+Stage d'été — [LeaderTec Engineering]
+
 Juin — Juillet 2026
+
 Encadrant : [Nakti Bilel]
