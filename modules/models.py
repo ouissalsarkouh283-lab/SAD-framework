@@ -14,6 +14,8 @@ from scipy import stats
 from scipy.optimize import linprog
 from sklearn.metrics import (accuracy_score, roc_auc_score,
                              silhouette_score, davies_bouldin_score)
+from sklearn.metrics import ConfusionMatrixDisplay
+
 
 import mlflow
 import mlflow.sklearn
