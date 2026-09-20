@@ -142,6 +142,19 @@ def run_random_forest(df, schema, mapping_config):
         # ← MLflow : métriques
         mlflow.log_metric("accuracy", round(accuracy, 4))
         mlflow.log_metric("auc_roc",  round(auc, 4))
+      
+        # Générer et sauvegarder la matrice de confusion
+        disp = ConfusionMatrixDisplay.from_predictions(
+            y_test, y_pred,
+            display_labels=["Sans remise (0)", "Avec remise (1)"],
+            cmap="Blues"
+        )
+        disp.ax_.set_title("Matrice de confusion — Random Forest\nlbl_2024")
+        plt.tight_layout()
+        plt.savefig("outputs/plots/confusion_matrix_rf.png", dpi=150)
+        plt.close()
+        print("     ✅ Matrice de confusion sauvegardée → outputs/plots/confusion_matrix_rf.png")
+
 
         # ← MLflow : feature importance
         importances = dict(zip(available, rf.feature_importances_))
